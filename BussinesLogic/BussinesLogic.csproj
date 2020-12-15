@@ -41,11 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concrete\CassandraUser.cs" />
     <Compile Include="Concrete\MongoUser.cs" />
     <Compile Include="Concrete\NeoUser.cs" />
+    <Compile Include="Interfaces\ICassandraUser.cs" />
+    <Compile Include="Interfaces\IMongoUser.cs" />
+    <Compile Include="Interfaces\INeoUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAL.Cassandra\DAL.Cassandra.csproj">
+      <Project>{2c2914db-cfd8-476b-ad7d-7d4bacbf2507}</Project>
+      <Name>DAL.Cassandra</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL.MongoDB\DAL.MongoDB.csproj">
       <Project>{9a5b15b0-f077-4c42-beeb-d5626e7118e3}</Project>
       <Name>DAL.MongoDB</Name>
@@ -53,6 +61,10 @@
     <ProjectReference Include="..\DAL.Neo4j\DAL.Neo4j.csproj">
       <Project>{bf6f0d06-8637-4e1e-9ff7-75086f92c3fc}</Project>
       <Name>DAL.Neo4j</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO.Cassandra\DTO.Cassandra.csproj">
+      <Project>{1cae28d9-3edf-4143-8d48-e8c7b292c4f5}</Project>
+      <Name>DTO.Cassandra</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
